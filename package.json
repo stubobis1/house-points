@@ -1,0 +1,13 @@
+{
+  "name": "house-points",
+  "version": "0.0.1",
+  "description": "Simple house points application.",
+  "main": "server.js",
+  "author": "StuBob",
+  "dependencies": {
+    "express": "^4.10.8",
+    "nodemon": "^2.0.2",
+    "morgan": "^1.9.0",
+    "ejs": "^3.1.5"
+  }
+}

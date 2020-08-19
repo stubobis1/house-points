@@ -5,7 +5,8 @@ services:
     entrypoint:
       - "sh"
       - "-c"
-      - "npm install && ./node_modules/.bin/nodemon server.js"
+#      - "npm install && ./node_modules/.bin/nodemon server.js"
+      - "node server.js"
     working_dir: "/usr/src/app"
     ports:
       - "8080:8080"

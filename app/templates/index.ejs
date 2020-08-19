@@ -1,476 +1,499 @@
 <!doctype html>
+<!--Based off of this codepen: https://codepen.io/cgorton/pen/xgvZLO
+I changed the css selectors, and made it look better IMO -->
+<html>
 
-<html >
+
+
 <head>
-
-
-    
-<head><link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
     <style>
-      body {
-    background: #64A6BD;
-  }
-  
-  .box {
-    position: relative;
-    margin: auto;
-    display: block;
-    margin-top: 8%;
-    width: 600px;
-    height: 500px;
-  }
-  
-  h1 {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    font-size: 50px;
-    font-family: 'IM Fell English', serif;
-    color: #BFC0C0;
-  }
-  
-  .top-glass, .top-glass2, .top-glass3, .top-glass4 {
-    position: absolute;
-    top: 60%;
-    width: 100px;
-    height: 130px;
-    background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(#A2B9C4), color-stop(#A5C4D4), color-stop(#A5C4D4), color-stop(#A2B9C4), to(#f7f7f7));
-    background: linear-gradient(to right, #f7f7f7, #A2B9C4, #A5C4D4, #A5C4D4, #A2B9C4, #f7f7f7);
-    opacity: 0.2;
-    border: 1px solid #A2B9C4;
-    border-radius: 40% 40% 10% 10%;
-    z-index: 1;
-  }
-  
-  .top-glass {
-    left: 10%;
-  }
-  
-  .top-glassp {
-    left: 10.5%;
-    position: absolute;
-    bottom: 14%;
-    width: 95px;
-    height: 20px;
-    background: #A50104;
-    border-radius: 40% 40% 10% 10%;
-  }
-  
-  .glassp {
-    left: 14%;
-    position: absolute;
-    top: 54.5%;
-    width: 55px;
-    height: 20px;
-    background: #A50104;
-    border-radius: 40%;
-  }
-  
-  .top-glass2 {
-    left: 30%;
-  }
-  
-  .top-glassp2 {
-    left: 30.5%;
-    position: absolute;
-    bottom: 14%;
-    width: 95px;
-    height: 20px;
-    background: #1A472A;
-    border-radius: 40% 40% 10% 10%;
-  }
-  
-  .glassp2 {
-    left: 34%;
-    position: absolute;
-    top: 54.5%;
-    width: 55px;
-    height: 20px;
-    background: #1A472A;
-    border-radius: 40%;
-  }
-  
-  .top-glass3 {
-    left: 50%;
-  }
-  
-  .top-glassp3 {
-    left: 50.5%;
-    position: absolute;
-    bottom: 14%;
-    width: 95px;
-    height: 20px;
-    background: #FFEC63;
-    border-radius: 40% 40% 10% 10%;
-  }
-  
-  .glassp3 {
-    left: 54%;
-    position: absolute;
-    top: 54.5%;
-    width: 55px;
-    height: 20px;
-    background: #FFEC63;
-    border-radius: 40%;
-  }
-  
-  .top-glass4 {
-    left: 70%;
-  }
-  
-  .top-glassp4 {
-    left: 70.5%;
-    position: absolute;
-    bottom: 14%;
-    width: 95px;
-    height: 20px;
-    background: #002B75;
-    border-radius: 40% 40% 10% 10%;
-  }
-  
-  .glassp4 {
-    left: 74%;
-    position: absolute;
-    top: 54.5%;
-    width: 55px;
-    height: 20px;
-    background: #002B75;
-    border-radius: 40%;
-  }
-  
-  .middle, .middle2, .middle3, .middle4 {
-    position: absolute;
-    top: 58%;
-    width: 50px;
-    height: 10px;
-    background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(#A2B9C4), color-stop(#A5C4D4), color-stop(#A5C4D4), color-stop(#A2B9C4), to(#f7f7f7));
-    background: linear-gradient(to right, #f7f7f7, #A2B9C4, #A5C4D4, #A5C4D4, #A2B9C4, #f7f7f7);
-    opacity: 0.1;
-    border: 1px solid #A2B9C4;
-    border-bottom: 0px;
-    border-radius: 40%;
-    z-index: 1;
-  }
-  
-  .middle {
-    left: 14%;
-  }
-  
-  .middle2 {
-    left: 34%;
-  }
-  
-  .middle3 {
-    left: 54%;
-  }
-  
-  .middle4 {
-    left: 74%;
-  }
-  
-  .glass, .glass2, .glass3, .glass4 {
-    position: absolute;
-    top: 37%;
-    width: 95px;
-    height: 105px;
-    background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(#A2B9C4), color-stop(#A5C4D4), color-stop(#A5C4D4), color-stop(#A2B9C4), to(#f7f7f7));
-    background: linear-gradient(to right, #f7f7f7, #A2B9C4, #A5C4D4, #A5C4D4, #A2B9C4, #f7f7f7);
-    opacity: 0.2;
-    border: 1px solid #A2B9C4;
-    border-radius: 10% 10% 40% 40%;
-    z-index: 1;
-  }
-  
-  .points, .points2, .points3 {
-    position: absolute;
-    top: 55%;
-    left: 16%;
-    width: 10px;
-    height: 10px;
-    background: #A50104;
-    border-radius: 40% 40% 20% 30%;
-  }
-  
-  .points {
-    left: 16%;
-    -webkit-animation: points-drop 4s infinite ease-in-out;
-            animation: points-drop 4s infinite ease-in-out;
-  }
-  
-  .points2 {
-    left: 17%;
-    -webkit-animation: points-drop 4s infinite ease-in-out 2s;
-            animation: points-drop 4s infinite ease-in-out 2s;
-  }
-  
-  .points3 {
-    left: 18%;
-    -webkit-animation: points-drop 4s infinite ease-in-out 3s;
-            animation: points-drop 4s infinite ease-in-out 3s;
-  }
-  
-  .points4, .points5 {
-    position: absolute;
-    top: 55%;
-    width: 10px;
-    height: 10px;
-    background: #1A472A;
-    border-radius: 40% 40% 20% 30%;
-  }
-  
-  .points4 {
-    left: 38%;
-    -webkit-animation: points-drop 4s infinite ease-in-out .5s;
-            animation: points-drop 4s infinite ease-in-out .5s;
-  }
-  
-  .points5 {
-    left: 39%;
-    -webkit-animation: points-drop 4s infinite ease-in-out 1.5s;
-            animation: points-drop 4s infinite ease-in-out 1.5s;
-  }
-  
-  .points6, .points7, .points8 {
-    position: absolute;
-    top: 55%;
-    width: 10px;
-    height: 10px;
-    background: #FFEC63;
-    border-radius: 40% 40% 20% 30%;
-  }
-  
-  .points6 {
-    left: 56%;
-    -webkit-animation: points-drop 4s infinite ease-in-out;
-            animation: points-drop 4s infinite ease-in-out;
-  }
-  
-  .points7 {
-    left: 57%;
-    -webkit-animation: points-drop 4s infinite ease-in-out 1.25s;
-            animation: points-drop 4s infinite ease-in-out 1.25s;
-  }
-  
-  .points8 {
-    left: 58%;
-    -webkit-animation: points-drop 4s infinite ease-in-out 2.25s;
-            animation: points-drop 4s infinite ease-in-out 2.25s;
-  }
-  
-  .points9 {
-    position: absolute;
-    top: 55%;
-    width: 10px;
-    height: 10px;
-    background: #002B75;
-    border-radius: 40% 40% 20% 30%;
-  }
-  
-  .points9 {
-    left: 77%;
-    -webkit-animation: points-drop 3s infinite ease-in-out;
-            animation: points-drop 3s infinite ease-in-out;
-  }
-  
-  @-webkit-keyframes points-drop {
-    0% {
-      top: 55%;
-    }
-    50% {
-      top: 60%;
-    }
-    100% {
-      top: 85%;
-    }
-  }
-  .glass, .band {
-    left: 10.5%;
-  }
-  
-  .glass2, .band2 {
-    left: 30.5%;
-  }
-  
-  .glass3, .band3 {
-    left: 50.5%;
-  }
-  
-  .glass4, .band4 {
-    left: 70.5%;
-  }
-  
-  .band, .band2, .band3, .band4 {
-    position: absolute;
-    top: 37%;
-    width: 97px;
-    height: 10px;
-    background: -webkit-gradient(linear, left top, right top, from(#CCA951), color-stop(#FFD166), to(#CCA951));
-    background: linear-gradient(to right, #CCA951, #FFD166, #CCA951);
-    border-radius: 20%;
-    z-index: 1;
-  }
-  
-  .band5, .band6, .band7, .band8 {
-    position: absolute;
-    top: 86%;
-    width: 100px;
-    height: 10px;
-    background: -webkit-gradient(linear, left top, right top, from(#CCA951), color-stop(#FFD166), to(#CCA951));
-    background: linear-gradient(to right, #CCA951, #FFD166, #CCA951);
-    border-radius: 20%;
-    z-index: 1;
-  }
-  
-  .band5 {
-    left: 10%;
-  }
-  
-  .band6 {
-    left: 30%;
-  }
-  
-  .band7 {
-    left: 50%;
-  }
-  
-  .band8 {
-    left: 70%;
-  }
-  
-  .podium, .podium2, .podium3, .podium4 {
-    position: absolute;
-    top: 88%;
-    width: 100px;
-    height: 50px;
-    border-radius: 10% 10% 0 0;
-    z-index: 1;
+        body {
+            background: #64A6BD;
+        }
 
-    text-align: center;
-    font-size: large;
-    font-family: 'IM Fell English', serif;
-    color:white;
-    text-shadow: 
-    -1px 0 black,
-     0 1px black,
-    1px 0 black,
-    0 -1px black,
-    0 0 5px black,
-    0 0 4px black,
-    0 0 3px black,
-    0 0 2px black,
-    0 0 1px black,
-    0 0 6px black;
-  }
-  
-  .podium {
-    left: 10%;
-    background: repeating-linear-gradient(
-    45deg,
-    #A50104,
-    #A50104 10px,
-    #FCBA04 10px,
-    #FCBA04 20px
-    );
+        .box {
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            width: 600px;
+            height: 500px;
+        }
 
-    
-  }
-  
-  .podium2 {
-    left: 30%;
-    background: repeating-linear-gradient(
-    45deg,
-    #1A472A,
-    #1A472A 10px,
-    #AAAAAA 10px,
-    #AAAAAA 20px
-);
-  }
-  
-  .podium3 {
-    left: 50%;
-    background: repeating-linear-gradient(
-    45deg,
-    #000000,
-    #000000 10px,
-    #FFEC63 10px,
-    #FFEC63 20px
-);
-  }
-  
-  .podium4 {
-    left: 70%;
-    background: repeating-linear-gradient(
-    45deg,
-    #002B75,
-    #002B75 10px,
-    #51320A 10px,
-    #51320A 20px
-);
-  }
- 
-  
+        h1 {
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            font-size: 50px;
+            font-family: 'IM Fell English', serif;
+            color: #BFC0C0;
+        }
+
+        .bottom-glass1,
+        .bottom-glass2,
+        .bottom-glass3,
+        .bottom-glass4 {
+            position: absolute;
+            top: 60%;
+            width: 100px;
+            height: 130px;
+            background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(#A2B9C4), color-stop(#A5C4D4), color-stop(#A5C4D4), color-stop(#A2B9C4), to(#f7f7f7));
+            background: linear-gradient(to right, #f7f7f7, #A2B9C4, #A5C4D4, #A5C4D4, #A2B9C4, #f7f7f7);
+            opacity: 0.2;
+            border: 1px solid #A2B9C4;
+            border-radius: 40% 40% 10% 10%;
+            z-index: 1;
+        }
+
+        .bottom-glass1 {
+            left: 10%;
+        }
+
+        .bottom-glass2 {
+            left: 30%;
+        }
+
+        .bottom-glass3 {
+            left: 50%;
+        }
+
+        .bottom-glass4 {
+            left: 70%;
+        }
+
+        .point-level1,
+        .point-level2,
+        .point-level3,
+        .point-level4 {
+            position: absolute;
+            bottom: 14%;
+            width: 95px;
+            border-radius: 40% 40% 10% 10%;
+            z-index: 0;
+            text-align: center;
+            font-size: large;
+            font-family: 'IM Fell English', serif;
+            color: white;
+            text-shadow:
+                -1px 0 black,
+                0 1px black,
+                1px 0 black,
+                0 -1px black,
+                0 0 5px black,
+                0 0 4px black,
+                0 0 3px black,
+                0 0 2px black,
+                0 0 1px black,
+                0 0 6px black;
+        }
+
+        .point-level1 {
+            left: 10.5%;
+            height: <%=team1.height %>%;
+            background: #A50104;
+        }
+
+        .point-level2 {
+            left: 30.5%;
+            height: <%=team2.height %>%;
+            background: #1A472A;
+        }
+
+        .point-level3 {
+            left: 50.5%;
+            height: <%=team3.height %>%;
+            background: #FFEC63;
+        }
+
+        .point-level4 {
+            left: 70.5%;
+            height: <%=team4.height %>%;
+            background: #002B75;
+        }
+
+        .top-sand1, .top-sand2, .top-sand3, .top-sand4{
+            position: absolute;
+            top: 54.5%;
+            width: 55px;
+            height: 20px;
+            border-radius: 40%;
+
+        }
+        .top-sand1 {
+            left: 14%;
+            background: #A50104;
+        }
+
+        .top-sand2 {
+            left: 34%;
+            background: #1A472A;
+        }
+
+        .top-sand3 {
+            left: 54%;
+            background: #FFEC63;
+        }
+
+        .top-sand4 {
+            left: 74%;
+            background: #002B75;
+        }
+
+        .middle1,
+        .middle2,
+        .middle3,
+        .middle4 {
+            position: absolute;
+            top: 58%;
+            width: 50px;
+            height: 10px;
+            background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(#A2B9C4), color-stop(#A5C4D4), color-stop(#A5C4D4), color-stop(#A2B9C4), to(#f7f7f7));
+            background: linear-gradient(to right, #f7f7f7, #A2B9C4, #A5C4D4, #A5C4D4, #A2B9C4, #f7f7f7);
+            opacity: 0.1;
+            border: 1px solid #A2B9C4;
+            border-bottom: 0px;
+            border-radius: 40%;
+            z-index: 1;
+        }
+
+        .middle1 {
+            left: 14%;
+        }
+
+        .middle2 {
+            left: 34%;
+        }
+
+        .middle3 {
+            left: 54%;
+        }
+
+        .middle4 {
+            left: 74%;
+        }
+
+        .glass1,
+        .glass2,
+        .glass3,
+        .glass4 {
+            position: absolute;
+            top: 37%;
+            width: 95px;
+            height: 105px;
+            background: -webkit-gradient(linear, left top, right top, from(#f7f7f7), color-stop(#A2B9C4), color-stop(#A5C4D4), color-stop(#A5C4D4), color-stop(#A2B9C4), to(#f7f7f7));
+            background: linear-gradient(to right, #f7f7f7, #A2B9C4, #A5C4D4, #A5C4D4, #A2B9C4, #f7f7f7);
+            opacity: 0.2;
+            border: 1px solid #A2B9C4;
+            border-radius: 10% 10% 40% 40%;
+            z-index: 1;
+        }
+
+
+
+        .particle1,
+        .particle2,
+        .particle3,
+        .particle4,
+        .particle5,
+        .particle6,
+        .particle7,
+        .particle8,
+        .particle9
+        {
+            position: absolute;
+            top: 55%;
+            height: 10px;
+            width: 10px;
+            border-radius: 40% 40% 20% 30%;
+            z-index: -1;
+        }
+
+
+
+
+
+
+
+
+
+
+        .particle1,
+        .particle2,
+        .particle3 {
+            left: 16%;
+            background: #A50104;
+        }
+
+        .particle1 {
+            left: 16%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out;
+            animation: particle-drop 4s infinite ease-in-out;
+        }
+
+        .particle2 {
+            left: 17%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out 2s;
+            animation: particle-drop 4s infinite ease-in-out 2s;
+        }
+
+        .particle3 {
+            left: 18%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out 3s;
+            animation: particle-drop 4s infinite ease-in-out 3s;
+        }
+
+        .particle4,
+        .particle5 {
+            background: #1A472A;
+        }
+
+        .particle4 {
+            left: 38%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out .5s;
+            animation: particle-drop 4s infinite ease-in-out .5s;
+        }
+
+        .particle5 {
+            left: 39%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out 1.5s;
+            animation: particle-drop 4s infinite ease-in-out 1.5s;
+        }
+
+        .particle6,
+        .particle7,
+        .particle8 {
+            background: #FFEC63;
+        }
+
+        .particle6 {
+            left: 56%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out;
+            animation: particle-drop 4s infinite ease-in-out;
+        }
+
+        .particle7 {
+            left: 57%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out 1.25s;
+            animation: particle-drop 4s infinite ease-in-out 1.25s;
+        }
+
+        .particle8 {
+            left: 58%;
+            -webkit-animation: particle-drop 4s infinite ease-in-out 2.25s;
+            animation: particle-drop 4s infinite ease-in-out 2.25s;
+        }
+
+        .particle9 {
+            background: #002B75;
+        }
+
+        .particle9 {
+            left: 77%;
+            -webkit-animation: particle-drop 3s infinite ease-in-out;
+            animation: particle-drop 3s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes particle-drop {
+            0% {
+                top: 55%;
+            }
+
+            50% {
+                top: 57%;
+            }
+
+            100% {
+                top: 85%;
+            }
+        }
+
+        .glass1,
+        .band1 {
+            left: 10.5%;
+        }
+
+        .glass2,
+        .band2 {
+            left: 30.5%;
+        }
+
+        .glass3,
+        .band3 {
+            left: 50.5%;
+        }
+
+        .glass4,
+        .band4 {
+            left: 70.5%;
+        }
+
+        .band1,
+        .band2,
+        .band3,
+        .band4 {
+            position: absolute;
+            top: 37%;
+            width: 97px;
+            height: 10px;
+            background: -webkit-gradient(linear, left top, right top, from(#CCA951), color-stop(#FFD166), to(#CCA951));
+            background: linear-gradient(to right, #CCA951, #FFD166, #CCA951);
+            border-radius: 20%;
+            z-index: 1;
+        }
+
+        .band5,
+        .band6,
+        .band7,
+        .band8 {
+            position: absolute;
+            top: 86%;
+            width: 100px;
+            height: 10px;
+            background: -webkit-gradient(linear, left top, right top, from(#CCA951), color-stop(#FFD166), to(#CCA951));
+            background: linear-gradient(to right, #CCA951, #FFD166, #CCA951);
+            border-radius: 20%;
+            z-index: 1;
+        }
+
+        .band5 {
+            left: 10%;
+        }
+
+        .band6 {
+            left: 30%;
+        }
+
+        .band7 {
+            left: 50%;
+        }
+
+        .band8 {
+            left: 70%;
+        }
+
+        .podium1,
+        .podium2,
+        .podium3,
+        .podium4 {
+            position: absolute;
+            top: 88%;
+            width: 100px;
+            height: 50px;
+            border-radius: 10% 10% 0 0;
+            z-index: 1;
+
+            vertical-align: middle;
+            text-align: center;
+            font-size: large;
+            font-family: 'IM Fell English', serif;
+            color: white;
+            text-shadow:
+                -1px 0 black,
+                0 1px black,
+                1px 0 black,
+                0 -1px black,
+                0 0 5px black,
+                0 0 4px black,
+                0 0 3px black,
+                0 0 2px black,
+                0 0 1px black,
+                0 0 6px black;
+        }
+
+        .podium1 {
+            left: 10%;
+            background: repeating-linear-gradient(45deg,
+                    #A50104,
+                    #A50104 10px,
+                    #FCBA04 10px,
+                    #FCBA04 20px);
+
+
+        }
+
+        .podium2 {
+            left: 30%;
+            background: repeating-linear-gradient(45deg,
+                    #1A472A,
+                    #1A472A 10px,
+                    #AAAAAA 10px,
+                    #AAAAAA 20px);
+        }
+
+        .podium3 {
+            left: 50%;
+            background: repeating-linear-gradient(45deg,
+                    #000000,
+                    #000000 10px,
+                    #FFEC63 10px,
+                    #FFEC63 20px);
+        }
+
+        .podium4 {
+            left: 70%;
+            background: repeating-linear-gradient(45deg,
+                    #002B75,
+                    #002B75 10px,
+                    #51320A 10px,
+                    #51320A 20px);
+        }
+
+        .team-name{
+            padding-top: 13%;
+        }
     </style>
-  </head>
-  <body>
-    <h1>HOGWARTS HOUSE POINTS</h1>
-    <div class="box">
-    <div class="gryffindor">
-      <div class="top-glass"></div>
-      <div class="top-glassp"></div>
-      <div class="glassp"></div>
-      <div class="middle"></div>
-      <div class="glass"></div>
-      <div class="band"></div>
-      <div class="band5"></div>
-      <div class="podium">Gryffindor</div>
-      <div class="points"></div>
-      <div class="points2"></div>
-      <div class="points3"></div>
-      </div>
-      <div class="slytherin">
-      <div class="top-glass2"></div>
-        <div class="top-glassp2"></div>
-      <div class="glassp2"></div>
-        <div class="middle2"></div>
-        <div class="glass2"></div>
-        <div class="band2"></div>
-        <div class="band6"></div>
-        <div class="podium2">Slytherin</div>
-        <div class="points4"></div>
-      <div class="points5"></div>
-      </div>
-       <div class="hufflepuff">
-      <div class="top-glass3"></div>
-        <div class="top-glassp3"></div>
-         <div class="glassp3"></div>
-         <div class="middle3"></div>
-         <div class="glass3"></div>
-         <div class="band3"></div>
-         <div class="band7"></div>
-         <div class="podium3">Hufflepuff</div>
-         <div class="points6"></div>
-      <div class="points7"></div>
-      <div class="points8"></div>
-      </div>
-       <div class="ravenclaw">
-      <div class="top-glass4"></div>
-         <div class="top-glassp4"></div>
-         <div class="glassp4"></div>
-         <div class="middle4"></div>
-         <div class="glass4"></div>
-         <div class="band4"></div>
-         <div class="band8"></div>
-         <div class="podium4">Ravenclaw</div>
-         <div class="points9"></div>
-    </div>
-  </body>
-
-
-
 </head>
 
 <body>
-	<h1>hello <%= name %></h1>
-
+    <div class="box">
+        <div class="gryffindor">
+            <div class="bottom-glass1"></div>
+            <div class="point-level1"><%=team1.points.toLocaleString() %></div>
+            <div class="top-sand1 top-sand"></div>
+            <div class="middle1"></div>
+            <div class="glass1"></div>
+            <div class="band1"></div>
+            <div class="band5"></div>
+            <div class="podium1"><div class="team-name">Gryffindor</div></div>
+            <div class="particle1"></div>
+            <div class="particle2"></div>
+            <div class="particle3"></div>
+        </div>
+        <div class="slytherin">
+            <div class="bottom-glass2"></div>
+            <div class="point-level2"><%=team2.points.toLocaleString() %></div>
+            <div class="top-sand2 top-sand"></div>
+            <div class="middle2"></div>
+            <div class="glass2"></div>
+            <div class="band2"></div>
+            <div class="band6"></div>
+            <div class="podium2"><div class="team-name">Slytherin</div></div>
+            <div class="particle4"></div>
+            <div class="particle5"></div>
+        </div>
+        <div class="hufflepuff">
+            <div class="bottom-glass3"></div>
+            <div class="point-level3"><%=team3.points.toLocaleString() %></div>
+            <div class="top-sand3 top-sand"></div>
+            <div class="middle3"></div>
+            <div class="glass3"></div>
+            <div class="band3"></div>
+            <div class="band7"></div>
+            <div class="podium3"><div class="team-name">Hufflepuff</div></div>
+            <div class="particle6"></div>
+            <div class="particle7"></div>
+            <div class="particle8"></div>
+        </div>
+        <div class="ravenclaw">
+            <div class="bottom-glass4"></div>
+            <div class="point-level4"><%=team4.points.toLocaleString() %></div>
+            <div class="top-sand4 top-sand"></div>
+            <div class="middle4"></div>
+            <div class="glass4"></div>
+            <div class="band4"></div>
+            <div class="band8"></div>
+            <div class="podium4"><div class="team-name">Ravenclaw</div></div>
+            <div class="particle9"></div>
+        </div>
 </body>
-</html>

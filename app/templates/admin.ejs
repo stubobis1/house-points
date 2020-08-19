@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+	<form action="/update" method="post">
+		<label for="user">User:</label><br>
+		<input type="text" id="user" name="user" value="user"><br>
+		<label for="pass">Password</label><br>
+		<input type="password" id="password" name="pass" value=""><br><br>
+		<br />
+		<br />
+		<label for="points">Points</label>
+		<input type="number" id="points" name="points" value="5">
+
+		<p>For</p>
+
+
+		<input type="checkbox" id="team1" name="team" value="team1">
+		<label for="team1"> Gray.fin.door</label>
+
+
+
+
+		<input type="checkbox" id="team2" name="team" value="team2">
+		<label for="team2"> Slythering</label>
+
+
+
+		<input type="checkbox" id="team3" name="team" value="team3">
+		<label for="team3"> Hooplefloof</label>
+
+
+
+		<input type="checkbox" id="team4" name="team" value="team4">
+		<label for="team4"> Raverclawz</label>
+
+
+		<br />
+		<br />
+		<br />
+
+
+
+
+	
+		<br />
+		<br />
+		<br />
+	
+		<br/>
+
+
+		
+		<br />
+		<br />
+		<br />
+
+		<input type="submit" value="Submit">
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+
+
+		<table>
+			<tr>
+				<td> Gray.fin.door </td>
+				<td> <%=team1.points.toLocaleString() %> </td></label>
+			</tr>
+			<tr>
+				<td> Slythering </td>
+				<td> <%=team2.points.toLocaleString() %> </td></label>
+			</tr>
+			<tr>
+				<td> Hooplefloof </td>
+				<td> <%=team3.points.toLocaleString() %> </td></label>
+			</tr>
+			<tr>
+				<td> Raverclawz </td>
+				<td> <%=team4.points.toLocaleString() %> </td></label>
+			</tr>
+		</table>
+		<label for="maxpoints">MaxPoints</label>
+		<input type="number" id="maxpoints" name="maxpoints" value="<%=maxpoints %>">
+	</form>
+
+</body>
+
+</html>

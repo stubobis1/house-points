@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const crypto = require('crypto');
 
 const username = "user";
-const passhash = "924e815239232f8c06f4394a2969b36b";
+const passhash = "63c8d7ef74b77281d817353ae395299a";
 
 const saveJsonPath = "./save.json";
 
@@ -104,7 +104,7 @@ function proccessDataForSave(formSubmission) {
     let objToSave = Object.assign(baseobj, JSON.parse(JSON.stringify(saveData)));
 
     let points = Number.parseInt(formSubmission.points) || 0;
-    let maxpoints = Number.parseInt(formSubmission.points) || null;
+    let maxpoints = Number.parseInt(formSubmission.maxpoints) || null;
 
 
     let addToTeam = (teamName) => {

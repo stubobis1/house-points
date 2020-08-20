@@ -1,7 +1,7 @@
 // set up ======================================================================
 let express = require('express');
 let app = express(); 						// create our app w/ express
-let port = process.env.PORT || 8080; 				// set the port
+let port = process.env.PORT || 80; 				// set the port
 let morgan = require('morgan');
 
 

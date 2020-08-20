@@ -12,6 +12,10 @@ I changed the css selectors, and made it look better IMO -->
             background: #64A6BD;
         }
 
+        .container{
+            overflow: hidden;
+            height: 310px;
+        }
         .box {
             position: relative;
             margin: auto;
@@ -111,15 +115,19 @@ I changed the css selectors, and made it look better IMO -->
             background: #002B75;
         }
 
-        .top-sand1, .top-sand2, .top-sand3, .top-sand4{
+        .top-sand1,
+        .top-sand2,
+        .top-sand3,
+        .top-sand4 {
             position: absolute;
             top: 17.5%;
             width: 55px;
             height: 20px;
             border-radius: 40%;
-            
+
 
         }
+
         .top-sand1 {
             left: 14%;
             background: #A50104;
@@ -198,8 +206,7 @@ I changed the css selectors, and made it look better IMO -->
         .particle6,
         .particle7,
         .particle8,
-        .particle9
-        {
+        .particle9 {
             position: absolute;
             top: 18%;
             height: 10px;
@@ -437,61 +444,71 @@ I changed the css selectors, and made it look better IMO -->
                     #51320A 20px);
         }
 
-        .team-name{
+        .team-name {
             padding-top: 13%;
         }
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <div class="gryffindor">
-            <div class="bottom-glass1"></div>
-            <div class="point-level1"><%=team1.points.toLocaleString() %></div>
-            <div class="top-sand1 top-sand"></div>
-            <div class="middle1"></div>
-            <div class="glass1"></div>
-            <div class="band1"></div>
-            <div class="band5"></div>
-            <div class="podium1"><div class="team-name">Gryffindor</div></div>
-            <div class="particle1"></div>
-            <div class="particle2"></div>
-            <div class="particle3"></div>
-        </div>
-        <div class="slytherin">
-            <div class="bottom-glass2"></div>
-            <div class="point-level2"><%=team2.points.toLocaleString() %></div>
-            <div class="top-sand2 top-sand"></div>
-            <div class="middle2"></div>
-            <div class="glass2"></div>
-            <div class="band2"></div>
-            <div class="band6"></div>
-            <div class="podium2"><div class="team-name">Slytherin</div></div>
-            <div class="particle4"></div>
-            <div class="particle5"></div>
-        </div>
-        <div class="hufflepuff">
-            <div class="bottom-glass3"></div>
-            <div class="point-level3"><%=team3.points.toLocaleString() %></div>
-            <div class="top-sand3 top-sand"></div>
-            <div class="middle3"></div>
-            <div class="glass3"></div>
-            <div class="band3"></div>
-            <div class="band7"></div>
-            <div class="podium3"><div class="team-name">Hufflepuff</div></div>
-            <div class="particle6"></div>
-            <div class="particle7"></div>
-            <div class="particle8"></div>
-        </div>
-        <div class="ravenclaw">
-            <div class="bottom-glass4"></div>
-            <div class="point-level4"><%=team4.points.toLocaleString() %></div>
-            <div class="top-sand4 top-sand"></div>
-            <div class="middle4"></div>
-            <div class="glass4"></div>
-            <div class="band4"></div>
-            <div class="band8"></div>
-            <div class="podium4"><div class="team-name">Ravenclaw</div></div>
-            <div class="particle9"></div>
+    <div class="container">
+        <div class="box">
+            <div class="gryffindor">
+                <div class="bottom-glass1"></div>
+                <div class="point-level1"><%=team1.points.toLocaleString() %></div>
+                <div class="top-sand1 top-sand"></div>
+                <div class="middle1"></div>
+                <div class="glass1"></div>
+                <div class="band1"></div>
+                <div class="band5"></div>
+                <div class="podium1">
+                    <div class="team-name">Gryffindor</div>
+                </div>
+                <div class="particle1"></div>
+                <div class="particle2"></div>
+                <div class="particle3"></div>
+            </div>
+            <div class="slytherin">
+                <div class="bottom-glass2"></div>
+                <div class="point-level2"><%=team2.points.toLocaleString() %></div>
+                <div class="top-sand2 top-sand"></div>
+                <div class="middle2"></div>
+                <div class="glass2"></div>
+                <div class="band2"></div>
+                <div class="band6"></div>
+                <div class="podium2">
+                    <div class="team-name">Slytherin</div>
+                </div>
+                <div class="particle4"></div>
+                <div class="particle5"></div>
+            </div>
+            <div class="hufflepuff">
+                <div class="bottom-glass3"></div>
+                <div class="point-level3"><%=team3.points.toLocaleString() %></div>
+                <div class="top-sand3 top-sand"></div>
+                <div class="middle3"></div>
+                <div class="glass3"></div>
+                <div class="band3"></div>
+                <div class="band7"></div>
+                <div class="podium3">
+                    <div class="team-name">Hufflepuff</div>
+                </div>
+                <div class="particle6"></div>
+                <div class="particle7"></div>
+                <div class="particle8"></div>
+            </div>
+            <div class="ravenclaw">
+                <div class="bottom-glass4"></div>
+                <div class="point-level4"><%=team4.points.toLocaleString() %></div>
+                <div class="top-sand4 top-sand"></div>
+                <div class="middle4"></div>
+                <div class="glass4"></div>
+                <div class="band4"></div>
+                <div class="band8"></div>
+                <div class="podium4">
+                    <div class="team-name">Ravenclaw</div>
+                </div>
+                <div class="particle9"></div>
+            </div>
         </div>
 </body>

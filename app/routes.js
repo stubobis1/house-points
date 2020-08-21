@@ -59,9 +59,14 @@ function getDataForRender() {
     let obj =  Object.assign(baseobj, saveData);
 
     let getHeight = (value, max=obj.maxpoints) => {
+        if(value == 0){
+            return 0;
+        }
+        else{
         return  Math.min(25, //takes the min of 25 and the value
                 Math.max(4, // takes the max of 4 or the value
                 value / max * 25));
+        }
     }
 
     obj.team1.height = getHeight(obj.team1.points);

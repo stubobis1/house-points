@@ -56,17 +56,12 @@ function getDataForRender() {
             "points": 0,
         }
     }
-    let obj =  Object.assign(baseobj, saveData);
+    let obj = Object.assign(baseobj, saveData);
 
-    let getHeight = (value, max=obj.maxpoints) => {
-        if(value == 0){
-            return 0;
-        }
-        else{
-        return  Math.min(25, //takes the min of 25 and the value
-                Math.max(4, // takes the max of 4 or the value
+    let getHeight = (value, max = obj.maxpoints) => {
+        return Math.min(25, //takes the min of 25 and the value
+            Math.max(4, // takes the max of 4 or the value
                 value / max * 25));
-        }
     }
 
     obj.team1.height = getHeight(obj.team1.points);
@@ -80,8 +75,7 @@ function getDataForRender() {
     return obj;
 }
 
-function hash(value)
-{
+function hash(value) {
     let submittedPassHash = crypto.createHash('md5').update(value).digest('hex');
     console.log("hash of value");
     console.log(submittedPassHash);
@@ -172,18 +166,18 @@ module.exports = function (app) {
     app.get('/', function (req, res) {
         ejs.renderFile(__dirname + '/templates/index.ejs', getDataForRender(), function (err, data) {
             console.error(err || "");
-           
+
             res.send(data);
         });
     });
 
     app.use(bodyParser.urlencoded({ extended: true }));
     app.post('/update', function (req, res) {
-        
 
-    console.log("================================ UPDATE ==============================")
 
-        
+        console.log("================================ UPDATE ==============================")
+
+
         let body = req.body;
         if (req.body
             && req.body.user == username
@@ -202,12 +196,12 @@ module.exports = function (app) {
             })
             res.redirect('/admin');
         }
-        else{
+        else {
             console.log("incorrect password");
             res.redirect('/')
         }
         console.log(req.body);
 
-        
+
     })
 };

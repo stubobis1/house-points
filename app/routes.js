@@ -7,7 +7,8 @@ const crypto = require('crypto');
 const username = "user";
 const passhash = "63c8d7ef74b77281d817353ae395299a";
 
-const saveJsonPath = "./save.json";
+//"notjson so nodemon doesn't pick up on it"
+const saveJsonPath = "./scores.notjson";
 
 
 let saveData;

@@ -3,71 +3,228 @@
 <html>
 
 <head>
+	<style>
+		table.class-list {
+			display: table;
+			border-collapse: collapse;
+			width: 50%;
 
+		}
+
+		table.class-list tr {
+			display: table-cell;
+			width: 12.5%;
+		}
+
+		table.class-list tr td {
+			display: block;
+			border: 1px solid black;
+			height: 20px;
+			padding-right: 2px;
+			padding-left: 2px;
+		}
+
+		.light-red {
+			background-color: rgb(255, 155, 155);
+		}
+
+		.light-blue {
+			background-color: rgb(155, 155, 255);
+		}
+
+		.light-green {
+			background-color: rgb(155, 255, 155);
+		}
+
+		.light-yellow {
+			background-color: rgb(255, 255, 155);
+		}
+
+
+		.red {
+			background-color: rgb(255, 112, 112);
+		}
+
+		.blue {
+			background-color: rgb(112, 112, 255);
+		}
+
+		.green {
+			background-color: rgb(112, 255, 112);
+		}
+
+		.yellow {
+			background-color: rgb(255, 255, 112);
+		}
+
+
+		.dark-red {
+			background-color: rgb(155, 55, 55);
+		}
+
+		.dark-blue {
+			background-color: rgb(55, 55, 155);
+		}
+
+		.dark-green {
+			background-color: rgb(55, 155, 55);
+		}
+
+		.dark-yellow {
+			background-color: rgb(155, 155, 55);
+		}
+
+
+		.submit {
+			width: 50%;
+			height: 80px;
+		}
+
+		div.quick-buttons {
+			display: flex;
+			flex-wrap: wrap;
+			width: 50%;
+		}
+
+		div.quick-buttons * {
+			width: 25%;
+			height: 30px;
+			box-sizing: border-box;
+		}
+	</style>
+
+	<script>
+		function addPointsAndSumbit(team, points) {
+			document.getElementById(team).click();
+			document.getElementById('points').value = points;
+			document.getElementById('admin-form').submit();
+		}
+	</script>
 </head>
 
 <body>
-	<form action="/update" method="post">
+	<form id="admin-form" action="/update" method="post">
 		<label for="user">User:</label><br>
 		<input type="text" id="user" name="user" value="user"><br>
 		<label for="pass">Password</label><br>
 		<input type="password" id="password" name="pass" value=""><br><br>
 		<br />
 		<br />
-		<label for="points">Points</label>
-		<input type="number" id="points" name="points" value="5">
 
-		<p>For</p>
-
-
-		<input type="checkbox" id="team1" name="team" value="team1">
-		<label for="team1"> Gray.fin.door</label>
-
-
-
-
-		<input type="checkbox" id="team2" name="team" value="team2">
-		<label for="team2"> Slythering</label>
-
-
-
-		<input type="checkbox" id="team3" name="team" value="team3">
-		<label for="team3"> Hooplefloof</label>
-
-
-
-		<input type="checkbox" id="team4" name="team" value="team4">
-		<label for="team4"> Raverclawz</label>
+		<input type="number" id="points" name="points" value="1">
+		<label>Points</label>
+		<br />
+		<button type="button" onclick="document.getElementById('points').value *= -1">Negitave</button>
 
 
 		<br />
-		<br />
-		<br />
 
 
+		<table class="class-list">
+			<tr class="red" onclick="document.getElementById('team1').click()">
+				<td><input type="checkbox" id="team1" name="team" value="team1"
+						onclick="document.getElementById('team1').click()">
+					<label> Gray.fin.door</label></td>
+				<td>Ayden Casity</td>
+				<td>Violet Humphries</td>
+				<td>Logan Mabey H.</td>
+				<td>Jage McKeever</td>
+				<td>Graham Sepp</td>
+				<td>Kaiten Swasey</td>
+				<td>Kyrie Ulibarri</td>
+				<td>Hannah Wheatley</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="green" onclick="document.getElementById('team2').click()">
+				<td> <input type="checkbox" id="team2" name="team" value="team2"
+						onclick="document.getElementById('team2').click()">
+					<label> Slythering</label></td>
+				<td>Amillion (Millie) Christy</td>
+				<td>Gavin Edebiri</td>
+				<td>Lily Fiedler</td>
+				<td>Leo Ortega</td>
+				<td>Lauren Sanchez</td>
+				<td>Ava Tapia</td>
+				<td>Mabel Tew</td>
+				<td>Raedyn Thiemann</td>
+				<td>Kariah Thompson</td>
+				<td></td>
+			</tr>
+			<tr class="yellow" onclick="document.getElementById('team3').click()">
+				<td> <input type="checkbox" id="team3" name="team" value="team3"
+						onclick="document.getElementById('team3').click()">
+					<label> Hooplefloof</label></td>
+				<td>Katie Attaway</td>
+				<td>Annaliese (Annie) Banuelos</td>
+				<td>Saianea Lolohea P</td>
+				<td>Ethan Mann P.</td>
+				<td>Aidan Moore</td>
+				<td>Haven Sanchez</td>
+				<td>Darcy Teel</td>
+				<td>Nathan Thompson</td>
+				<td>Ella John</td>
+				<td></td>
+			</tr>
+
+			<tr class="blue" onclick="document.getElementById('team4').click()">
+				<td><input type="checkbox" id="team4" name="team" value="team4"
+						onclick="document.getElementById('team4').click()">
+					<label> Raverclawz</label></td>
+				<td>Myles Bergstrom</td>
+				<td>Ethan Ewing</td>
+				<td>Axel Kantun-Esplin</td>
+				<td>Addysen (Addy) Lund-Clayton</td>
+				<td>Isabella (Bella) Mendoza</td>
+				<td>Austyn (Gage) Minnick</td>
+				<td>William Pratt</td>
+				<td>Lina Sayarath</td>
+				<td>Aeryn Trease</td>
+				<td></td>
+			</tr>
+		</table>
+		<br />
+		<div class="quick-buttons">
+			<button type="button" class="light-red" onclick="addPointsAndSumbit('team1', 1)">+1</button>
+			<button type="button" class="light-green" onclick="addPointsAndSumbit('team2', 1)">+1</button>
+			<button type="button" class="light-yellow" onclick="addPointsAndSumbit('team3', 1)">+1</button>
+			<button type="button" class="light-blue" onclick="addPointsAndSumbit('team4', 1)">+1</button>
+
+			<button type="button" class="light-red" onclick="addPointsAndSumbit('team1', 5)">+5</button>
+			<button type="button" class="light-green" onclick="addPointsAndSumbit('team2', 5)">+5</button>
+			<button type="button" class="light-yellow" onclick="addPointsAndSumbit('team3', 5)">+5</button>
+			<button type="button" class="light-blue" onclick="addPointsAndSumbit('team4', 5)">+5</button>
 
 
-	
-		<br />
-		<br />
-		<br />
-	
-		<br/>
+			<button type="button" class="light-red" onclick="addPointsAndSumbit('team1', 10)">+10</button>
+			<button type="button" class="light-green" onclick="addPointsAndSumbit('team2', 10)">+10</button>
+			<button type="button" class="light-yellow" onclick="addPointsAndSumbit('team3', 10)">+10</button>
+			<button type="button" class="light-blue" onclick="addPointsAndSumbit('team4', 10)">+10</button>
+
+			<div> </div>
+			<div> </div>
+			<div> </div>
+			<div> </div>
+
+			<button type="button" class="dark-red" onclick="addPointsAndSumbit('team1', -1)">-1</button>
+			<button type="button" class="dark-green" onclick="addPointsAndSumbit('team2', -1)">-1</button>
+			<button type="button" class="dark-yellow" onclick="addPointsAndSumbit('team3', -1)">-1</button>
+			<button type="button" class="dark-blue" onclick="addPointsAndSumbit('team4', -1)">-1</button>
+
+			<button type="button" class="dark-red" onclick="addPointsAndSumbit('team1', -5)">-5</button>
+			<button type="button" class="dark-green" onclick="addPointsAndSumbit('team2', -5)">-5</button>
+			<button type="button" class="dark-yellow" onclick="addPointsAndSumbit('team3', -5)">-5</button>
+			<button type="button" class="dark-blue" onclick="addPointsAndSumbit('team4', -5)">-5</button>
 
 
-		
+			<button type="button" class="dark-red" onclick="addPointsAndSumbit('team1', -10)">-10</button>
+			<button type="button" class="dark-green" onclick="addPointsAndSumbit('team2', -10)">-10</button>
+			<button type="button" class="dark-yellow" onclick="addPointsAndSumbit('team3', -10)">-10</button>
+			<button type="button" class="dark-blue" onclick="addPointsAndSumbit('team4', -10)">-10</button>
+		</div>
 		<br />
+		<input type="submit" id="submit_button" value="Submit" class="submit">
 		<br />
-		<br />
-
-		<input type="submit" value="Submit">
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-
 
 		<table>
 			<tr>
